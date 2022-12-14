@@ -9,6 +9,8 @@ function cargarTabla(data){
     
     for (let index = 0; index < data.length; index++) {
         let element = data[index];
+        // modal
+
         
        
 
@@ -28,7 +30,7 @@ function cargarTabla(data){
         tdCity.innerText = element.city;
         tdBday.innerText = element.birthday;
         tdMail.innerText = element.email;
-        tdEditar.innerHTML = `<button type="button" id="${element.id}" onclick="editar('${element.id}','${element.name}','${element.city}', '${element.birthday}','${element.email}')" class="btn btn-light">Editar</button>`;
+        tdEditar.innerHTML = `<button type="button"  id="${element.id}" onclick="editar('${element.id}','${element.name}','${element.city}', '${element.birthday}','${element.email}')" class="btn btn-light">Editar</button>`;
         tdEliminar.innerHTML = `<button type="button" id="${element.id}" onclick="eliminar('${element.id}')" class="btn btn-danger">Eliminar</button>`;
         // agarro el tbody y voy insertando en el html 
         let tbody = document.getElementById('tab');
@@ -68,7 +70,12 @@ function editar(id,name, city, birthday, email) {
 function eliminar(id){
    
     let test = document.getElementById('row'+id).remove();
-    alert(`Registro: ${id } borrado con exito`);
+    //alert(`Registro: ${id } borrado con exito`);
+    Swal.fire(
+        `ID: ${id}`,
+        'Eliminado con Exito!',
+        'success'
+      )
 
     let cant = document.getElementById('cantEmpleados');
     let cant2 = parseInt(cant.innerText)-1;
@@ -161,6 +168,15 @@ function agregar(){
     // agarro el tbody y voy insertando en el html 
     let tbody = document.getElementById('tab');
 
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: `Usuario: ${nameF.value}`,
+        text: 'fue agregado con Exito!',
+        showConfirmButton: false,
+        timer: 2500
+      })  
+
     tr.id = 'row'+newId;
 
     tbody.appendChild(tr);
@@ -188,7 +204,6 @@ fetch(api)
     })
   
     .catch(error => console.error(error))
-
 
 
 
