@@ -1,0 +1,43 @@
+html,body{
+    background-color: rgb(71, 71, 71);
+    color:white;
+}
+#body{
+    background-color: rgb(71, 71, 71);
+    color:white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  
+    
+}
+#title{
+    border-bottom: 1px solid rgb(95, 202, 223);
+   
+    margin-bottom: 20px;;
+}
+
+#botones{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display:flex;
+    justify-content: space-between;;
+}
+#formEnviar{
+    background-color: rgb(71, 71, 71);
+    color:white;
+}
+#title2{
+    border-bottom: 1px solid rgb(95, 202, 223);
+    margin-bottom: 40px;;
+}
+#cantEmpleados{
+    align-items: center;
+    text-align: left; 
+}
+
+#test{
+    display:flex;
+}
